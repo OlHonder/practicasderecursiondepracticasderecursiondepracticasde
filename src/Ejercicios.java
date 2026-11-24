@@ -71,6 +71,44 @@ public class Ejercicios {
         }
         return c;
     }
+
+    public static double calcularPotencia(int base, int exponente){
+        double r = 0;
+        if (exponente == 0){
+            r = 1;
+        }
+        else if (exponente > 0){
+            r = base * calcularPotencia(base, exponente - 1);
+        }
+        else {
+            r = 1 / calcularPotencia(base, -exponente);
+        }
+        return r;
+    }
+
+    public static int busquedaBinaria(int[] arreglo, int objetivo, int inicio, int fin){
+        int r = 0;
+        if (inicio > fin){
+            r = -1;
+        }
+        else {
+            int mid = (inicio + fin) / 2;
+
+            if (arreglo[mid] == objetivo){
+                r = mid;
+            }
+
+            else if (objetivo < arreglo[mid]){
+                r = busquedaBinaria(arreglo, objetivo, inicio, mid - 1);
+            }
+
+            else{
+                r = busquedaBinaria(arreglo, objetivo, mid + 1, fin);
+            }
+        }
+        
+        return r;
+    }
     
 
 }

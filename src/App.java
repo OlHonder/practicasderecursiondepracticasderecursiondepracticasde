@@ -26,7 +26,7 @@ public class App {
             System.out.println("7.- Elevar a una potencia un número");
             System.out.println("8.- Busqueda Binaria");
             System.out.println("9.- Sumatoria de elementos en una lista");
-            System.out.println("10.- Terminar");
+            System.out.println("10.- Terminar\n");
 
             try {
                 opcion = Keyboard.readInt(); // Entrada del usuario
@@ -76,39 +76,76 @@ public class App {
                         break;
                     }
                     case 5: { // Función de Ackerman
-                        System.out.println("\nSeleccionaste la función de Ackerman, la cuál solicitará una entrada manual para que se pueda controlar la ejecución, parámetros >= 4 se convertirán es una prueba de estrés de memoria.");
-                        System.out.println("\nIngrese parámetro m: ");
+                        System.out.println(
+                                "\nSeleccionaste la función de Ackerman, la cuál solicitará una entrada manual para que se pueda controlar la ejecución, parámetros >= 4 se convertirán es una prueba de estrés de memoria.");
+                        System.out.print("\nIngrese parámetro m: ");
                         int m = Keyboard.readInt();
-                        System.out.println("\nIngrese parámetro n: ");
+                        System.out.print("\nIngrese parámetro n: ");
                         int n = Keyboard.readInt();
                         try {
                             int resultadoAck = Ejercicios.Ackerman(m, n);
                             System.out.println("\nEl resultado de la función es: " + resultadoAck);
                         } catch (StackOverflowError e) {
-                            System.out.printf("\nTe acabaste la memoria con eso. %d y %d son muy grandes para este algoritmo.", m, n);  
+                            System.out.printf(
+                                    "\nTe acabaste la memoria con eso. %d y %d son muy grandes para este algoritmo.", m,
+                                    n);
                         }
                         break;
                     }
                     case 6: { // Números de Catalán
-                        System.out.println("\nSeleccionaste los números de Catalán, cuya secuencia crece de manera exponencial respecto a la magnitud de n.");
-                        System.out.println("\nIngrese parámetro n: ");
-                        long n = Keyboard.readLong();
+                        System.out.println(
+                                "\nSeleccionaste los números de Catalán, cuya secuencia crece de manera exponencial respecto a la magnitud de n.");
+                        System.out.print("\nIngrese parámetro n: ");
+                        long nc = Keyboard.readLong();
                         try {
-                            long cat = Ejercicios.Catalan(n);
-                            System.out.printf("\nEl número de Catalán para %d es: %d", n, cat);
+                            long cat = Ejercicios.Catalan(nc);
+                            System.out.printf("\nEl número de Catalán para %d es: %d", nc, cat);
                         } catch (StackOverflowError e) {
-                            System.out.printf("\nTe acabaste la memoria con eso. %d produce un número de Catalán muy grande para la memoria.", n);
+                            System.out.printf(
+                                    "\nTe acabaste la memoria con eso. %d produce un número de Catalán muy grande para la memoria.",
+                                    nc);
                         }
                         break;
                     }
                     case 7: {
-                        
+                        System.out.println(
+                                "\nVamos a calcular la potencia de un número base por un exponente, exponentes muy elevados pueden desbordar la memoria.");
+                        System.out.print("\nIngrese número base: ");
+                        int base = Keyboard.readInt();
+                        System.out.print("\nIngrese exponente: ");
+                        int exp = Keyboard.readInt();
+                        try {
+                            double pot = Ejercicios.calcularPotencia(base, exp);
+                            System.out.printf("\nEl número %d elevado a la potencia de %d tiene como resultado: %.2f",
+                                    base, exp, pot);
+                        } catch (StackOverflowError e) {
+                            System.out.printf("\nNo hay memoria suficiente para elevar %d a la potencia de %d", base,
+                                    exp);
+                        }
                         break;
                     }
                     case 8: {
+                        int[] nuMemes = {
+                                -273, // El corazón de tu ex (cero absoluto)
+                                0, // Tus horas de sueño esta semana
+                                7, // El Bicho (Siuuu)
+                                21, // u stupid -no im not -what's 9+10? -21 -u stupid
+                                24, // Algo muy gracioso según Bob Esponja
+                                25, // Algo todavía más gracioso que 24
+                                64, // Un stack de Minecraft
+                                69, // Nice
+                                404, // Not Found (irónicamente, este SÍ lo va a encontrar)
+                                420, // Número meme obligatorio
+                                666, // El número de la función de Ackermann (el diablo)
+                                1337, // Nivel hacker
+                                9001 // ¡Es más de 9000!
+                        };
+                        System.out.println();
+                        
                         break;
                     }
                     case 9: {
+                        System.out.println("Todavía no lo he hecho.");
                         break;
                     }
                     case 10: {
