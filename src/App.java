@@ -140,8 +140,18 @@ public class App {
                                 1337, // Nivel hacker
                                 9001 // ¡Es más de 9000!
                         };
-                        System.out.println();
+                        System.out.println("Se ha preparado un arreglo de números 'memes', piense en uno y veamos si está o no en el arreglo.");
+                        System.out.print("\nIndique el número que desea buscar: ");
+                        int nuBusq = Keyboard.readInt();
+
+                        int resultado = Ejercicios.busquedaBinaria(nuMemes, nuBusq, 0, nuMemes.length - 1);
                         
+                        if (resultado == -1){
+                            System.out.printf("\nEl número %d no se encontró en el arreglo.\n", nuBusq);
+                        }
+                        else {
+                            System.out.printf("\nEl número %d se encontró en la posición %d\n", nuBusq, resultado);
+                        }
                         break;
                     }
                     case 9: {
